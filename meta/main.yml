@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: openstack_network
   author: Adrian Juhl
   description: An ansible role for managing OpenStack network components
   license: license (MIT)
