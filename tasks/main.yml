@@ -3,4 +3,4 @@
 
 - debug:
     msg: "hello, world"
-    verbosity: 2
+#    verbosity: 2
