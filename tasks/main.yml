@@ -1,2 +1,6 @@
 ---
 # tasks file for adrianjuhl.openstack_network
+
+- debug:
+    msg: "hello, world"
+    verbosity: 2
