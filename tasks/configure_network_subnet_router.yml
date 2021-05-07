@@ -1,0 +1,10 @@
+---
+- name: Configure network {{ adrianjuhl__openstack_network__network_name }}
+  os_network:
+    auth: "{{ adrianjuhl__openstack_network__auth }}"
+    name: "{{ adrianjuhl__openstack_network__network_name }}"
+    state: present
+  register: network_result
+- debug:
+    msg: "network_result: {{ network_result }}"
+    verbosity: 2

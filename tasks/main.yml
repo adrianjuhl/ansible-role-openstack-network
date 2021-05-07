@@ -4,3 +4,9 @@
 - debug:
     msg: "hello, world"
 #    verbosity: 2
+
+- name: Configure network
+  include_tasks: configure_network_subnet_router.yml
+
+- debug:
+    msg: "after network configured"
