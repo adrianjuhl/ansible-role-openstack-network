@@ -25,7 +25,7 @@
     auth: "{{ adrianjuhl__openstack_network__auth }}"
     name: "{{ adrianjuhl__openstack_network__router_name }}"
     state: present
-    network: "{{ adrianjuhl__openstack_network__network_name }}"
+    network: "uofa_internal"
     interfaces:
       - "{{ adrianjuhl__openstack_network__subnet_name }}"
   register: router_result
