@@ -5,9 +5,6 @@
     name: "{{ adrianjuhl__openstack_network__network_name }}"
     state: present
   register: adrianjuhl__openstack_network__network_result
-- debug:
-    msg: "network_result: {{ network_result }}"
-    verbosity: 2
 - name: Create subnet {{ adrianjuhl__openstack_network__subnet_name }}
   os_subnet:
     auth: "{{ adrianjuhl__openstack_network__auth }}"
@@ -17,9 +14,6 @@
     cidr: "{{ adrianjuhl__openstack_network__cidr }}"
     dns_nameservers: "{{ adrianjuhl__openstack_network__nameservers }}"
   register: adrianjuhl__openstack_network__subnet_result
-- debug:
-    msg: "subnet_result: {{ subnet_result }}"
-    verbosity: 2
 - name: Create router {{ adrianjuhl__openstack_network__router_name }}
   os_router:
     auth: "{{ adrianjuhl__openstack_network__auth }}"
