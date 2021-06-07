@@ -4,7 +4,7 @@
     auth: "{{ adrianjuhl__openstack_network__auth }}"
     name: "{{ adrianjuhl__openstack_network__network_name }}"
     state: present
-  register: network_result
+  register: adrianjuhl__openstack_network__network_result
 - debug:
     msg: "network_result: {{ network_result }}"
     verbosity: 2
@@ -14,10 +14,9 @@
     name: "{{ adrianjuhl__openstack_network__subnet_name }}"
     state: present
     network_name: "{{ adrianjuhl__openstack_network__network_name }}"
-    #cidr: 10.0.0.0/24
     cidr: "{{ adrianjuhl__openstack_network__cidr }}"
     dns_nameservers: "{{ adrianjuhl__openstack_network__nameservers }}"
-  register: subnet_result
+  register: adrianjuhl__openstack_network__subnet_result
 - debug:
     msg: "subnet_result: {{ subnet_result }}"
     verbosity: 2
@@ -26,10 +25,8 @@
     auth: "{{ adrianjuhl__openstack_network__auth }}"
     name: "{{ adrianjuhl__openstack_network__router_name }}"
     state: present
-    network: "uofa_internal"
+    #network: "uofa_internal"
+    network: "{{ adrianjuhl__openstack_network__router_network }}"
     interfaces:
       - "{{ adrianjuhl__openstack_network__subnet_name }}"
-  register: router_result
-- debug:
-    msg: "router_result: {{ router_result }}"
-    verbosity: 2
+  register: adrianjuhl__openstack_network__router_result
