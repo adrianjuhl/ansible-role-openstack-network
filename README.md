@@ -1,7 +1,7 @@
 Ansible role: openstack-network
 =========
 
-This role provides the ability to configure (create or delete) a network in OpenStack, consisting of a network, subnet and router network components.
+This role provides the ability to configure a network in OpenStack, consisting of a network, subnet and router network components.
 
 See Role Variables for the types of networks and their components that can be provisioned.
 

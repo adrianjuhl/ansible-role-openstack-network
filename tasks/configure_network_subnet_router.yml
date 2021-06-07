@@ -1,25 +1,24 @@
 ---
 - name: Configure network {{ adrianjuhl__openstack_network__network_name }}
   os_network:
-    auth: "{{ adrianjuhl__openstack_network__auth }}"
     name: "{{ adrianjuhl__openstack_network__network_name }}"
     state: present
-  register: adrianjuhl__openstack_network__network_result
-- name: Create subnet {{ adrianjuhl__openstack_network__subnet_name }}
-  os_subnet:
     auth: "{{ adrianjuhl__openstack_network__auth }}"
+  register: adrianjuhl__openstack_network__network_result
+- name: Configure subnet {{ adrianjuhl__openstack_network__subnet_name }}
+  os_subnet:
     name: "{{ adrianjuhl__openstack_network__subnet_name }}"
     state: present
+    auth: "{{ adrianjuhl__openstack_network__auth }}"
     network_name: "{{ adrianjuhl__openstack_network__network_name }}"
     cidr: "{{ adrianjuhl__openstack_network__cidr }}"
     dns_nameservers: "{{ adrianjuhl__openstack_network__nameservers }}"
   register: adrianjuhl__openstack_network__subnet_result
-- name: Create router {{ adrianjuhl__openstack_network__router_name }}
+- name: Configure router {{ adrianjuhl__openstack_network__router_name }}
   os_router:
-    auth: "{{ adrianjuhl__openstack_network__auth }}"
     name: "{{ adrianjuhl__openstack_network__router_name }}"
     state: present
-    #network: "uofa_internal"
+    auth: "{{ adrianjuhl__openstack_network__auth }}"
     network: "{{ adrianjuhl__openstack_network__router_network }}"
     interfaces:
       - "{{ adrianjuhl__openstack_network__subnet_name }}"
