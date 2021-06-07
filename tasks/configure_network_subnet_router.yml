@@ -14,7 +14,8 @@
     name: "{{ adrianjuhl__openstack_network__subnet_name }}"
     state: present
     network_name: "{{ adrianjuhl__openstack_network__network_name }}"
-    cidr: 10.0.0.0/24
+    #cidr: 10.0.0.0/24
+    cidr: "{{ adrianjuhl__openstack_network__cidr }}"
     dns_nameservers: "{{ adrianjuhl__openstack_network__nameservers }}"
   register: subnet_result
 - debug:

@@ -1,2 +1,4 @@
 ---
 # defaults file for adrianjuhl.openstack_network
+
+adrianjuhl__openstack_network__cidr: 10.0.0.0/24
