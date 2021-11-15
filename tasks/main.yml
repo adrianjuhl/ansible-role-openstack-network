@@ -1,19 +1,5 @@
 ---
 # tasks file for adrianjuhl.openstack_network
 
-- debug:
-    msg: "hello, world new"
-#    verbosity: 2
-
 - name: Configure network, subnet, and router
   include_tasks: configure_network_subnet_router.yml
-
-- debug:
-    msg: "after network configured"
-
-- debug:
-    msg: "adrianjuhl__openstack_network__network_result: {{ adrianjuhl__openstack_network__network_result }}"
-- debug:
-    msg: "adrianjuhl__openstack_network__subnet_result: {{ adrianjuhl__openstack_network__subnet_result }}"
-- debug:
-    msg: "adrianjuhl__openstack_network__router_result: {{ adrianjuhl__openstack_network__router_result }}"
