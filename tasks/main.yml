@@ -10,3 +10,10 @@
 
 - debug:
     msg: "after network configured"
+
+- debug:
+    msg: "adrianjuhl__openstack_network__network_result: {{ adrianjuhl__openstack_network__network_result }}"
+- debug:
+    msg: "adrianjuhl__openstack_network__subnet_result: {{ adrianjuhl__openstack_network__subnet_result }}"
+- debug:
+    msg: "adrianjuhl__openstack_network__router_result: {{ adrianjuhl__openstack_network__router_result }}"
